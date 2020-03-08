@@ -1,0 +1,192 @@
+body {
+    background: f1f1f1;
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    padding: calc(5vh - 10px) calc(5vw - 10px);
+    font: 18px "helvetica";
+    line-height: 1.8;
+    color:#444040;
+}
+.contents {
+    margin: auto;
+    width: 60%;
+    padding: 3px;
+}
+.img-circle {
+    width: 10%;
+    height: 10%;
+}
+.container-fluid {
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.strong {
+    font: 10px "helvetica";
+}
+
+.link-social{
+    font: 12px "helvetica";
+    color:#444040;
+}
+
+/* .col-sm-1 {
+    padding-top: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.col-xm-1 {
+    padding-top: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+} */
+
+.social {
+    margin: auto;
+    width: 50%;
+}
+.social ul {
+    margin: auto;
+    width: 60%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+.social ul li {        
+    margin: auto;
+    display: block;
+    flex: 0;
+}
+.social li i {
+    font-size: 30px;
+}
+
+/* My Apps section */
+.myapps {
+    margin: auto;
+    width: 60%;
+    padding: 3px;
+}
+.myapps ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.myapps ul li { 
+    margin-right: 1.5em;
+}
+.myapps li p { 
+    font: 17px "helvetica";
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 75px;
+    margin-top: 10px;
+}
+.myapps img{
+    width: 65px;
+    height: 65px;
+}
+
+/* Works */
+.works {
+    margin: auto;
+    width: 60%;
+    padding: 3px;
+}
+.works ul { 
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.works ul li { 
+    margin-right: 1.5em;
+    align-items: center;
+}
+.works li p { 
+    font: 17px "helvetica";
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 75px;
+    margin-top: 10px;
+}
+.works img {
+    width: 65px;
+    height: 65px;
+}
+/* Footer */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    color: gray;
+    font: 14px "helvetica";
+}
+
+/* Responsive */
+@media screen and (max-width: 500px) {
+    h1 { font-size: 30px; }
+    h2 { font-size: 18px; }
+    h3 { font-size: 14px; }
+
+    .img-circle {
+        width: 40%;
+        height: 40%;
+    }
+    .contents {
+        margin: auto;
+        width: 100%;
+        padding: 3px;
+    }
+    /* Socials */
+    .social {
+        margin: auto;
+        width: 100%;
+    }
+    .social li i {
+        font-size: 25px;
+    }
+    /* myapps */
+    .myapps {
+        margin: auto;
+        width: 100%;
+        padding: 3px;
+    }
+    .myapps ul { 
+        box-sizing: content-box;
+        flex-wrap: wrap;
+    }
+    .myapps li p { 
+        font: 12px "helvetica";
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 45px;
+        margin-top: 10px;
+    }
+    .myapps img {
+        width: 50px;
+        height: 50px;
+    }
+    /* Works */
+    .works {
+        margin: auto;
+        width: 100%;
+        padding: 3px;
+    }
+    .works ul { 
+        box-sizing: content-box;
+        flex-wrap: wrap;
+    }
+    .works li p { 
+        font: 12px "helvetica";
+        text-align: center;
+        word-wrap: break-word;
+        max-width: 45px;
+        margin-top: 10px;
+    }
+    .works img {
+        width: 50px;
+        height: 50px;
+    }
+  }
