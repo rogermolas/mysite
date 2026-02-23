@@ -66,6 +66,32 @@ body {
     font-size: 30px;
 }
 
+.myapps-sm {
+    margin: auto;
+    width: 60%;
+    padding: 3px;
+}
+.myapps-sm ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.myapps-sm ul li { 
+    margin-right: 1.5em;
+}
+.myapps-sm li p { 
+    font: 12px "helvetica";
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 75px;
+    margin-top: 10px;
+}
+.myapps-sm img{
+    width: 45px;
+    height: 45px;
+}
+
 /* My Apps section */
 .myapps {
     margin: auto;
