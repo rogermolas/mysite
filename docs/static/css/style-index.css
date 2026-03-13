@@ -68,28 +68,44 @@ body {
 
 .myapps-sm {
     margin: auto;
-    width: 60%;
     padding: 3px;
 }
 .myapps-sm ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
 }
-.myapps-sm ul li { 
-    margin-right: 1.5em;
+
+.myapps-sm li {
+  flex: 0 0 40px;
+  text-align: center;
+  max-width: 40px;
 }
-.myapps-sm li p { 
-    font: 12px "helvetica";
-    text-align: center;
-    word-wrap: break-word;
-    max-width: 75px;
-    margin-top: 10px;
+
+.myapps-sm img {
+  width: 100%;
+  max-width: 40px;
+  height: auto;
+  border-radius: 12px;
 }
-.myapps-sm img{
-    width: 45px;
-    height: 45px;
+
+.myapps-sm p {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .myapps-sm li {
+    flex: 0 0 40px;
+  }
+
+  .myapps-sm img {
+    max-width: 40px;
+  }
 }
 
 /* My Apps section */
