@@ -23,8 +23,9 @@
         }
 
         a {
-               color: var(--primary);
+            color: var(--primary);
         }
+
         body {
             background: var(--bg);
             color: var(--text);
@@ -122,13 +123,75 @@
         }
 
         /* FOOTER */
-        footer {
+        .footer {
             text-align: center;
-            color: var(--muted);
-            margin-top: 60px;
+            margin-top: 80px;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #a1a1aa;
             font-size: 13px;
+            backdrop-filter: blur(10px);
         }
 
+        /* Main text */
+        .footer p {
+            margin: 6px 0;
+            line-height: 1.6;
+        }
+
+        /* Brand link */
+        .footer a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Link row */
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* Divider style links */
+        .footer-links a {
+            color: #9ca3af;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Heart animation */
+        .footer .heart {
+            color: #ef4444;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
     </style>
 </head>
 
@@ -170,18 +233,26 @@
             <div class="screens" id="screenshots"></div>
         </div>
 
-        <footer
-            style="text-align:center; margin-top:60px; padding:20px; color:#a1a1aa; font-size:13px; border-top:1px solid rgba(255,255,255,0.1);">
-
+        <footer class="footer">
+            <p>Built with <span class="heart">❤️</span> by <strong>Roger Molas</strong></p>
             <p>
-              Built with <span style="color:#ef4444;">❤️</span> by <strong>Roger Molas</strong>
+                © <span id="year"></span>
+                <a href="https://www.brisklabs.dev/" target="_blank">
+                    Brisklabs.dev
+                </a>
+                . All rights reserved.
             </p>
-
-            <p>
-                © <span id="year"></span> <strong><a href="https://www.brisklabs.dev/">Brisklabs.dev</a></strong>. All rights reserved.
-            </p>
+            <div class="footer-links">
+                <a href="/budgetnest_app_privacy_policy.html">Privacy Policy</a>
+                <a href="/budgetnest_app_terms_condition.html">Terms</a>
+                <a href="mailto:contact@brisklabs.dev">Contact</a>
+            </div>
 
         </footer>
+
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
 
     </div>
 
