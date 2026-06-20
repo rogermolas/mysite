@@ -1,180 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Nest: Expense Tracker</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --primary: #22c55e;
+            --secondary: #16a34a;
+            --text: #ffffff;
+            --muted: #a1a1aa;
+        }
 
-<title>Budget Nest: Expense Tracker</title>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+        }
 
-<style>
-:root {
-    --bg: #0f172a;
-    --primary: #22c55e;
-    --secondary: #16a34a;
-    --text: #ffffff;
-    --muted: #a1a1aa;
-}
+        a {
+               color: var(--primary);
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-}
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-body {
-    background: var(--bg);
-    color: var(--text);
-}
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
 
-/* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
+        .icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
 
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 40px 0;
-}
+        .title {
+            font-size: 34px;
+            font-weight: bold;
+        }
 
-.icon {
-    width: 90px;
-    height: 90px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-}
+        .subtitle {
+            color: var(--muted);
+            margin-top: 8px;
+        }
 
-.title {
-    font-size: 34px;
-    font-weight: bold;
-}
+        /* BUTTONS */
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
 
-.subtitle {
-    color: var(--muted);
-    margin-top: 8px;
-}
+        .store-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-/* BUTTONS */
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 18px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    color: white;
-}
+        .btn-primary {
+            background: var(--primary);
+        }
 
-.btn-primary {
-    background: var(--primary);
-}
+        .btn-secondary {
+            background: #111;
+            border: 1px solid #333;
+        }
 
-.btn-secondary {
-    background: #111;
-    border: 1px solid #333;
-}
+        /* BADGES */
+        .badge {
+            height: 40px;
+        }
 
-/* BADGES */
-.badge {
-    height: 40px;
-}
+        /* ABOUT */
+        .section {
+            margin-top: 50px;
+        }
 
-/* ABOUT */
-.section {
-    margin-top: 50px;
-}
+        .section h2 {
+            margin-bottom: 10px;
+        }
 
-.section h2 {
-    margin-bottom: 10px;
-}
+        /* SCREENSHOTS */
+        .screens {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
 
-/* SCREENSHOTS */
-.screens {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
+        .screens img {
+            height: 420px;
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
 
-.screens img {
-    height: 420px;
-    border-radius: 16px;
-    flex-shrink: 0;
-}
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: var(--muted);
+            margin-top: 60px;
+            font-size: 13px;
+        }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    color: var(--muted);
-    margin-top: 60px;
-    font-size: 13px;
-}
-</style>
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
-        <img id="appIcon" class="icon" src="icon.png" />
+        <!-- HERO -->
+        <div class="hero">
+            <img id="appIcon" class="icon" src="icon.png" />
 
-        <div class="title" id="appName">App Name</div>
-        <div class="subtitle" id="appSubtitle">Simple tagline goes here</div>
+            <div class="title" id="appName">App Name</div>
+            <div class="subtitle" id="appSubtitle">Simple tagline goes here</div>
 
-        <div class="buttons">
-            <a id="iosLink" class="btn btn-primary" href="#">
-                🍏 App Store
-            </a>
+            <div class="buttons">
 
-            <a id="androidLink" class="btn btn-secondary" href="#">
-                🤖 Google Play
-            </a>
+                <a id="iosLink" href="#">
+                    <img src="https://www.rogermolas.com/static/store-badge/apps-store-black.svg" style="height: 44px;">
+                </a>
+
+                <a id="androidLink" href="#">
+                    <img src="https://www.rogermolas.com/static/store-badge/google-play.svg" style="height: 44px;">
+                </a>
+
+            </div>
         </div>
+
+        <!-- ABOUT -->
+        <div class="section">
+            <h2>About</h2>
+            <p id="appAbout" style="color: var(--muted); line-height: 1.6;">
+                About your app goes here...
+            </p>
+        </div>
+
+        <!-- SCREENSHOTS -->
+        <div class="section">
+            <h2>Screenshots</h2>
+            <div class="screens" id="screenshots"></div>
+        </div>
+
+        <footer
+            style="text-align:center; margin-top:60px; padding:20px; color:#a1a1aa; font-size:13px; border-top:1px solid rgba(255,255,255,0.1);">
+
+            <p>
+              Built with <span style="color:#ef4444;">❤️</span> by <strong>Roger Molas</strong>
+            </p>
+
+            <p>
+                © <span id="year"></span> <strong><a href="https://www.brisklabs.dev/">Brisklabs.dev</a></strong>. All rights reserved.
+            </p>
+
+        </footer>
+
     </div>
 
-    <!-- ABOUT -->
-    <div class="section">
-        <h2>About</h2>
-        <p id="appAbout" style="color: var(--muted); line-height: 1.6;">
-            About your app goes here...
-        </p>
-    </div>
-
-    <!-- SCREENSHOTS -->
-    <div class="section">
-        <h2>Screenshots</h2>
-        <div class="screens" id="screenshots"></div>
-    </div>
-
-    <footer>
-        © 2026 Budget Nest: Expense Tracker
-    </footer>
-
-</div>
-
-<script>
-/* =========================
-   DYNAMIC CONFIG
-========================= */
-const appConfig = {
-    name: "BudgetNest",
-    subtitle: "Smart Offline Budget Manager",
-    about: `BudgetNest (BudNest)
+    <script>
+        /* =========================
+           DYNAMIC CONFIG
+        ========================= */
+        const appConfig = {
+            name: "BudgetNest",
+            subtitle: "Smart Budget & Expense Tracker",
+            about: `BudgetNest (BudNest)
 
 Take control of your finances with BudgetNest (BudNest), a simple and reliable budgeting app designed to help you manage your money anytime, anywhere. With full offline support, your financial data stays on your device, giving you complete privacy while allowing you to track your budget without an internet connection.
 
@@ -215,50 +233,54 @@ BudgetNest is ideal for anyone who wants to:
 
 Download BudgetNest today and take the first step toward smarter financial management.
 `,
-    icon: "assets/logo-180.png",
-    iosLink: "https://apps.apple.com/app/id000000",
-    androidLink: "https://play.google.com/store/apps/details?id=com.example",
+            icon: "assets/logo-180.png",
+            iosLink: "https://apps.apple.com/app/id000000",
+            androidLink: "https://play.google.com/store/apps/details?id=com.example",
 
-    screenshots: [
-        "assets/screen1.jpg",
-        "assets/screen2.jpg",
-        "assets/screen3.jpg",
-        "assets/screen4.jpg",
-        "assets/screen5.jpg",
-        "assets/screen6.jpg"
-    ],
+            screenshots: [
+                "assets/screen1.jpg",
+                "assets/screen2.jpg",
+                "assets/screen3.jpg",
+                "assets/screen4.jpg",
+                "assets/screen5.jpg",
+                "assets/screen6.jpg"
+            ],
 
-    theme: {
-        bg: "#1A5140",
-        primary: "#5CA87C",
-        secondary: "#B7E5BA"
-    }
-};
+            theme: {
+                bg: "#1A5140",
+                primary: "#5CA87C",
+                secondary: "#B7E5BA"
+            }
+        };
 
-/* =========================
-   APPLY CONFIG
-========================= */
-document.getElementById("appName").innerText = appConfig.name;
-document.getElementById("appSubtitle").innerText = appConfig.subtitle;
-document.getElementById("appAbout").innerText = appConfig.about;
+        /* =========================
+           APPLY CONFIG
+        ========================= */
+        document.getElementById("appName").innerText = appConfig.name;
+        document.getElementById("appSubtitle").innerText = appConfig.subtitle;
+        document.getElementById("appAbout").innerText = appConfig.about;
 
-document.getElementById("appIcon").src = appConfig.icon;
-document.getElementById("iosLink").href = appConfig.iosLink;
-document.getElementById("androidLink").href = appConfig.androidLink;
+        document.getElementById("appIcon").src = appConfig.icon;
+        document.getElementById("iosLink").href = appConfig.iosLink;
+        document.getElementById("androidLink").href = appConfig.androidLink;
 
-/* screenshots */
-const ssContainer = document.getElementById("screenshots");
-appConfig.screenshots.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    ssContainer.appendChild(img);
-});
+        /* screenshots */
+        const ssContainer = document.getElementById("screenshots");
+        appConfig.screenshots.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            ssContainer.appendChild(img);
+        });
 
-// /* theme */
-document.documentElement.style.setProperty("--bg", appConfig.theme.bg);
-document.documentElement.style.setProperty("--primary", appConfig.theme.primary);
-document.documentElement.style.setProperty("--secondary", appConfig.theme.secondary);
-</script>
+        // /* theme */
+        document.documentElement.style.setProperty("--bg", appConfig.theme.bg);
+        document.documentElement.style.setProperty("--primary", appConfig.theme.primary);
+        document.documentElement.style.setProperty("--secondary", appConfig.theme.secondary);
+
+        // Copyrights
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>
