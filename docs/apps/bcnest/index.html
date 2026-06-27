@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCNest: Digital Business Cards</title>
+    <style>
+        :root {
+            --bg: #085BB5;
+            --primary: #085BB5;
+            --secondary: #4DA3FF;
+            --text: #ffffff;
+            --muted: #eef0f2;
+        }
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+        }
+
+        a {
+            color: var(--primary);
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .store-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+        }
+
+        .btn-secondary {
+            background: #111;
+            border: 1px solid #333;
+        }
+
+        /* BADGES */
+        .badge {
+            height: 40px;
+        }
+
+        /* ABOUT */
+        .section {
+            margin-top: 50px;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+        }
+
+        /* SCREENSHOTS */
+        .screens {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .screens img {
+            height: 420px;
+            border-radius: 16px;
+            flex-shrink: 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #a1a1aa;
+            font-size: 13px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main text */
+        .footer p {
+            margin: 6px 0;
+            line-height: 1.6;
+        }
+
+        /* Brand link */
+        .footer a {
+            color: #e5e7eb;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Link row */
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        /* Divider style links */
+        .footer-links a {
+            color: #9ca3af;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        /* Heart animation */
+        .footer .heart {
+            color: #ef4444;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero">
+            <img id="appIcon" class="icon" src="icon.png" />
+
+            <div class="title" id="appName">App Name</div>
+            <div class="subtitle" id="appSubtitle">Simple tagline goes here</div>
+
+            <div class="buttons">
+
+                <a id="iosLink" href="#">
+                    <img src="https://www.rogermolas.com/static/store-badge/apps-store-black.svg" style="height: 44px;">
+                </a>
+
+                <a id="androidLink" href="#">
+                    <img src="https://www.rogermolas.com/static/store-badge/google-play.svg" style="height: 44px;">
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="section">
+            <h2>About</h2>
+            <p id="appAbout" style="color: var(--muted); line-height: 1.6;">
+                About your app goes here...
+            </p>
+        </div>
+
+        <!-- SCREENSHOTS -->
+        <div class="section">
+            <h2>Screenshots</h2>
+            <div class="screens" id="screenshots"></div>
+        </div>
+
+        <footer class="footer">
+            <p>Built with <span class="heart">❤️</span> by <strong>
+                    <a href="https://www.rogermolas.com/" target="_blank">
+                        Roger Molas
+                    </a>
+                </strong>
+            </p>
+            <p>
+                © <span id="year"></span>
+                <a href="https://www.brisklabs.dev/" target="_blank">
+                    Brisklabs.dev
+                </a>
+                . All rights reserved.
+            </p>
+            <div class="footer-links">
+                <a href="../qrnest/qrnest_app_privacy_policy.html">Privacy Policy</a>
+                <a href="../qrnest/qrnest_app_terms_condition.html">Terms</a>
+                <a href="mailto:contact@brisklabs.dev">Contact</a>
+            </div>
+
+        </footer>
+
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+
+    </div>
+
+    <script>
+        /* =========================
+           DYNAMIC CONFIG
+        ========================= */
+        const appConfig = {
+            name: "BCNest",
+            subtitle: "Digital Business Cards",
+            about: `BCNest – Digital Business Cards
+
+**Never run out of business cards again.**
+
+BCNest (Business Card Nest) replaces traditional paper business cards with a modern digital solution that lets you create, share, and organize professional contacts—all from your phone.
+
+Whether you're attending conferences, trade shows, networking events, business meetings, career fairs, or tech conferences, exchanging contact information has never been easier.
+
+Why Choose BCNest?
+
+Traditional business cards are easy to forget, lose, or throw away. BCNest helps you:
+
+• Create a professional digital business card in minutes.
+• Share your contact information instantly with a QR code.
+• Scan and save other people's digital business cards with a single tap.
+• Build a searchable digital contact collection instead of carrying stacks of paper cards.
+• Access your cards and contacts anytime, even without an internet connection.
+
+## Key Features
+
+### Create Your Digital Business Card
+
+Build a personalized business card with:
+
+• Name and job title
+• Company information
+• Phone number and email
+• Website
+• Social media profiles
+• Address
+• Custom branding and more
+
+Share Instantly:
+Share your digital business card using a QR code so others can save your contact information in seconds—no typing required.
+
+### Scan & Collect Contacts
+Scan digital business cards from colleagues, clients, recruiters, and new connections to build your professional network.
+
+### Organize Your Network
+Keep all your business contacts in one place with a searchable collection that's always available on your device.
+
+### Works Completely Offline
+BCNest stores your cards and contacts locally on your device. Create, edit, view, and share your business cards without an internet connection.
+
+### Privacy First
+
+Your data stays on your device. No account registration and no cloud storage required.
+
+Perfect For
+
+• Business professionals
+• Entrepreneurs
+• Sales teams
+• Freelancers
+• Consultants
+• Students
+• Job seekers
+• Recruiters
+• Startup founders
+• Developers
+• Designers
+
+Ideal for:
+
+• Business meetings
+• Networking events
+• Tech conferences
+• Startup events
+• Career fairs
+• Trade shows
+• Exhibitions
+• Workshops
+• Seminars
+• Community meetups
+
+Go paperless, stay organized, and grow your professional network with BCNest.
+`,
+            icon: "assets/logo-180.png",
+            iosLink: "https://apps.apple.com/us/app/qrnest/id1561612447",
+            androidLink: "#",
+
+            screenshots: [
+                "assets/screen1.jpg",
+                "assets/screen2.jpg",
+                "assets/screen3.jpg",
+                "assets/screen4.jpg",
+                "assets/screen5.jpg",
+                "assets/screen6.jpg"
+            ],
+
+            theme: {
+                bg: "#085BB5",
+                primary: "#085BB5",
+                secondary: "#4DA3FF"
+            }
+        };
+
+        /* =========================
+           APPLY CONFIG
+        ========================= */
+        document.getElementById("appName").innerText = appConfig.name;
+        document.getElementById("appSubtitle").innerText = appConfig.subtitle;
+        document.getElementById("appAbout").innerText = appConfig.about;
+
+        document.getElementById("appIcon").src = appConfig.icon;
+        document.getElementById("iosLink").href = appConfig.iosLink;
+        document.getElementById("androidLink").href = appConfig.androidLink;
+
+        /* screenshots */
+        const ssContainer = document.getElementById("screenshots");
+        appConfig.screenshots.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            ssContainer.appendChild(img);
+        });
+
+        // /* theme */
+        document.documentElement.style.setProperty("--bg", appConfig.theme.bg);
+        document.documentElement.style.setProperty("--primary", appConfig.theme.primary);
+        document.documentElement.style.setProperty("--secondary", appConfig.theme.secondary);
+
+        // Copyrights
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
