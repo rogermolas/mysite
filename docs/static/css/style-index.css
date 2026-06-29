@@ -168,8 +168,7 @@ li {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 14px;
-
-  justify-items: center;
+  justify-items: left;
 }
 
 /* Apps Grid */
