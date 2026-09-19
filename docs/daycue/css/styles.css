@@ -48,11 +48,11 @@ and it updates everywhere in this file.
 
 :root {
     /* Brand */
-    --color-primary: #00c9db;
-    --color-primary-light: #40e0ee;
-    --color-primary-hover: #36edfd;
-    --color-secondary: #4633af;
-    --color-accent: #4eaaff;
+    --color-primary: #0A84FF;
+    --color-primary-light: #7C5CFC;
+    --color-primary-hover: #5B5CE2;
+    --color-secondary: #5b5ce2;
+    --color-accent: #0A84FF;
 
     /* Text */
     --color-text: #f1f1f8;
@@ -70,7 +70,7 @@ and it updates everywhere in this file.
 
     /* Gradient (extra pages header) */
     --color-gradient-start: #2c1a7e;
-    --color-gradient-end: #5557db;
+    --color-gradient-end: #5b5ce2;
 
     /* Typography */
     --font-heading: "Montserrat", sans-serif;
