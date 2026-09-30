@@ -1,15 +1,32 @@
 :root {
   --bg: #f5f7fa;
   --card: #ffffff;
-  --text: #1f2937;
+
+  --text: #111827;
+  --text-soft: #374151;
   --muted: #6b7280;
+
   --border: #e5e7eb;
 
+  --accent: #111827;
+  --accent-soft: #f3f4f6;
+
   --radius: 18px;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --radius-small: 12px;
+
+  --shadow:
+    0 8px 30px rgba(0, 0, 0, 0.06);
+
+  --shadow-hover:
+    0 14px 35px rgba(0, 0, 0, 0.10);
 
   --container: 960px;
 }
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -21,7 +38,7 @@ html {
 
 body {
   margin: 0;
-  padding: 40px 20px;
+  padding: 48px 20px;
 
   background: var(--bg);
   color: var(--text);
@@ -29,185 +46,421 @@ body {
   font-family:
     -apple-system,
     BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
     "Segoe UI",
     sans-serif;
 
+  font-size: 16px;
   line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Links */
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Images */
+a:focus-visible {
+  outline: 3px solid rgba(17, 24, 39, 0.25);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Sections */
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
 .card,
 .hero,
 .footer {
   width: 100%;
   max-width: var(--container);
-  margin: 0 auto 28px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Card Layout */
 .card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 32px;
-  box-shadow: var(--shadow);
+  margin-bottom: 28px;
 }
 
-/* Hero */
+main {
+  width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 38px 20px 34px;
 }
 
 .img-circle {
   width: 140px;
   height: 140px;
 
-  margin: 0 auto 20px;
+  margin: 0 auto 24px;
 
   border-radius: 50%;
   object-fit: cover;
 
   box-shadow: var(--shadow);
+
+  border: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  margin: 0 auto 14px;
+
+  max-width: 760px;
+
+  color: var(--text);
+
+  font-size: clamp(38px, 6vw, 52px);
+  line-height: 1.1;
+
+  letter-spacing: -0.035em;
+  font-weight: 750;
 }
 
 .hero-description {
   max-width: 700px;
-  margin: 0 auto;
+
+  margin: 0 auto 8px;
+
   color: var(--muted);
+
   font-size: 18px;
+  line-height: 1.65;
 }
 
-/* Social */
-.social ul {
-  list-style: none;
+.hero-description:last-of-type {
+  margin-bottom: 0;
+}
 
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.social ul {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  align-items: center;
+
+  gap: 12px;
 
   padding: 0;
-  margin-top: 24px;
+  margin: 28px 0 0;
+
+  list-style: none;
+}
+
+.social li {
+  margin: 0;
 }
 
 .social li a {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  border: 1px solid var(--border);
   border-radius: 50%;
-  background: white;
 
-  box-shadow: var(--shadow);
+  background: var(--card);
 
-  transition: 0.2s ease;
+  color: var(--text-soft);
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .social li a:hover {
   transform: translateY(-3px);
+
+  background: var(--accent-soft);
+
+  box-shadow: var(--shadow-hover);
 }
 
 .social li i {
-  font-size: 20px;
+  font-size: 18px;
 }
 
-/* Headings */
-h1,
-h2,
-h3 {
-  margin-top: 0;
-  color: var(--text);
-}
 
-h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-}
+/* =========================================================
+   CARDS / SECTIONS
+   ========================================================= */
 
-h3 {
-  margin-top: 24px;
-  margin-bottom: 12px;
-}
+.card {
+  padding: 34px;
 
-/* Text */
-p {
-  color: var(--muted);
-  margin-bottom: 16px;
-}
+  background: var(--card);
 
-/* Lists */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* Badge Grid */
-.badge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  justify-items: left;
-}
-
-/* Apps Grid */
-.app-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 24px;
-}
-
-/* App Card */
-.app-card {
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.app-card:hover {
-  transform: translateY(-4px);
-}
-
-.app-card img {
-  width: 80px;
-  height: 80px;
-
-  margin: 0 auto 10px;
-
-  border-radius: 22px;
-  object-fit: cover;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: var(--radius);
 
   box-shadow: var(--shadow);
 }
 
-.app-card span {
-  font-size: 14px;
+.card h2 {
+  margin: 0 0 10px;
+
+  color: var(--text);
+
+  font-size: 28px;
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+}
+
+.card h3 {
+  margin: 30px 0 12px;
+
+  color: var(--text);
+
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.section-subtitle {
+  max-width: 680px;
+
+  margin: 0 0 28px;
+
+  color: var(--muted);
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+p {
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  color: var(--muted);
+}
+
+strong {
+  color: var(--text-soft);
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+ul {
+  margin-top: 0;
+  padding-left: 21px;
+}
+
+li {
+  margin-bottom: 9px;
+  color: var(--muted);
+}
+
+.card li strong {
   color: var(--text);
 }
 
-/* Contact Section */
+
+/* =========================================================
+   APP / PROJECT GRID
+   ========================================================= */
+
+.app-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(120px, 1fr));
+
+  gap: 28px 20px;
+}
+
+
+/* =========================================================
+   APP CARD
+   ========================================================= */
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+}
+
+.app-card img {
+  width: 82px;
+  height: 82px;
+
+  margin: 0 auto 11px;
+
+  object-fit: cover;
+
+  border-radius: 21px;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.app-card span,
+.app-card p {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 14px;
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+.app-card p {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   RESPONSIVE PROJECT IMAGES
+   ========================================================= */
+
+.img-rounded {
+  border-radius: 18px;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   TECH STACK
+   ========================================================= */
+
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 10px 12px;
+}
+
+.badge-grid img {
+  height: 30px;
+  width: auto;
+
+  max-width: 100%;
+
+  border-radius: 6px;
+}
+
+
+/* =========================================================
+   WEB PROJECTS
+   ========================================================= */
+
+#web-projects ul {
+  margin-bottom: 0;
+}
+
+#web-projects a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+
+  transition:
+    text-decoration-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+#web-projects a:hover {
+  text-decoration-color: var(--text);
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
 .contact-card {
   text-align: center;
+
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.contact-card .eyebrow {
+  margin-bottom: 8px;
+}
+
+.contact-card h2 {
+  margin-bottom: 12px;
+}
+
+.contact-card p {
+  max-width: 600px;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-button {
@@ -215,58 +468,101 @@ li {
   align-items: center;
   justify-content: center;
 
-  margin-top: 10px;
-  padding: 14px 22px;
+  margin-top: 8px;
+
+  padding: 13px 22px;
 
   border-radius: 12px;
 
-  background: #111827;
-  color: white;
+  background: var(--accent);
+  color: #ffffff;
 
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 650;
 
-  transition: 0.2s ease;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .contact-button:hover {
-  opacity: 0.9;
   transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.16);
+
+  opacity: 0.95;
 }
 
-/* Footer */
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .footer {
+  padding: 10px 20px 28px;
+
   text-align: center;
+
   color: var(--muted);
-  font-size: 14px;
-  padding: 20px;
+
+  font-size: 13px;
 }
 
-/* Responsive */
+.footer p {
+  margin-bottom: 6px;
+
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--muted);
+}
+
+.footer a:hover {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
 @media (max-width: 768px) {
 
   body {
-    padding: 20px 14px;
-  }
-
-  .card {
-    padding: 22px;
+    padding: 24px 14px;
   }
 
   .hero {
-    padding-top: 20px;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero-description {
-    font-size: 16px;
+    padding: 26px 12px 28px;
   }
 
   .img-circle {
-    width: 110px;
-    height: 110px;
+    width: 112px;
+    height: 112px;
+
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    max-width: 620px;
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .social ul {
+    margin-top: 22px;
+    gap: 10px;
   }
 
   .social li a {
@@ -275,14 +571,182 @@ li {
   }
 
   .social li i {
-    font-size: 18px;
+    font-size: 17px;
   }
 
-  .badge-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .card {
+    padding: 24px 20px;
+    margin-bottom: 20px;
+  }
+
+  .card h2 {
+    font-size: 25px;
+  }
+
+  .section-subtitle {
+    margin-bottom: 22px;
   }
 
   .app-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 24px 12px;
+  }
+
+  .app-card img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .contact-card {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 16px 10px;
+  }
+
+  .hero {
+    padding: 22px 10px 24px;
+  }
+
+  .img-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .card h2 {
+    font-size: 23px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+  }
+
+  .app-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 22px 8px;
+  }
+
+  .app-card img {
+    width: 68px;
+    height: 68px;
+
+    border-radius: 18px;
+  }
+
+  .app-card span,
+  .app-card p {
+    font-size: 13px;
+  }
+
+  .badge-grid {
+    gap: 8px;
+  }
+
+  .badge-grid img {
+    height: 27px;
+  }
+
+  .social li a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .footer {
+    padding-bottom: 20px;
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --bg: #0b0f19;
+    --card: #111827;
+
+    --text: #f9fafb;
+    --text-soft: #d1d5db;
+    --muted: #9ca3af;
+
+    --border: #1f2937;
+
+    --accent: #f9fafb;
+    --accent-soft: #1f2937;
+
+    --shadow:
+      0 10px 30px rgba(0, 0, 0, 0.25);
+
+    --shadow-hover:
+      0 14px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  .contact-button {
+    background: #f9fafb;
+    color: #111827;
+  }
+
+  .img-circle {
+    border-color: #1f2937;
   }
 }
